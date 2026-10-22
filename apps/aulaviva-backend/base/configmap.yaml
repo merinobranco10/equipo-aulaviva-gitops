@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aulaviva-config
+data:
+  SERVER_PORT: "8080"
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"
