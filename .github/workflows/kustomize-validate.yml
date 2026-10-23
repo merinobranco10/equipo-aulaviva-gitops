@@ -1,0 +1,43 @@
+
+name: GitOps - Kustomize Validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/**"
+      - ".github/workflows/kustomize-validate.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "apps/**"
+      - ".github/workflows/kustomize-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-kustomize:
+    name: Validate base, dev and prod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitOps repository
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: v1.32.0
+
+      - name: Validate base
+        run: kubectl kustomize apps/aulaviva-backend/base
+
+      - name: Validate dev overlay
+        run: kubectl kustomize apps/aulaviva-backend/overlays/dev
+
+      - name: Validate prod overlay
+        run: kubectl kustomize apps/aulaviva-backend/overlays/prod
