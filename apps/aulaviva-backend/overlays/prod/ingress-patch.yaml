@@ -4,7 +4,7 @@ metadata:
   name: aulaviva-ingress
 spec:
   rules:
-    - host: aulaviva.local
+    - host: prod.aulaviva.local
       http:
         paths:
           - path: /
