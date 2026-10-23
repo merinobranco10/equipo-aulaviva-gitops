@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: aulaviva-ingress
 spec:
-  ingressClassName: nginx
   rules:
     - host: aulaviva.local
       http:
