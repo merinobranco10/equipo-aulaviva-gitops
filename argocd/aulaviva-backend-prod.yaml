@@ -8,7 +8,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/matiasdiaz434/equipo-aulaviva-gitops.git
+    repoURL: https://github.com/merinobranco10/equipo-aulaviva-gitops.git
     targetRevision: main
     path: apps/aulaviva-backend/overlays/prod
 
