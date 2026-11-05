@@ -20,7 +20,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: backend
-          image: ghcr.io/merinobranco10/equipo-aulaviva-backend@sha256:91a7d45ff74fbbf0c1ce899369c569d751682ed0a3f68f159d6e4f7ce53f5352
+          image: ghcr.io/merinobranco10/equipo-aulaviva-backend@sha256:6ca5ecb712275e44d1248326f2265acb1da8fed0651464f69c6bc02e4e14daac
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
